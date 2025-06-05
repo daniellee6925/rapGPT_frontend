@@ -75,7 +75,7 @@ export default function MainApp() {
           <div className="flex flex-1">
             <div className="w-1/2 flex items-center justify-center p-4">
               <Image
-                src="/Eminem.jpg"
+                src="/eminem.jpg"
                 alt="Rap vibe"
                 width={600} // Adjust dimensions as needed
                 height={800}
