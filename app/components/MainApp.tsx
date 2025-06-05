@@ -15,7 +15,7 @@ export default function MainApp() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://3.145.29.211/generate", {
+      const res = await fetch('${process.env.NEXT_PUBLIC_API_URL}/generate', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -38,7 +38,7 @@ export default function MainApp() {
  const handlePlayLyrics = async () => {
   setIsPlaying(true); // Set playing status to true
   try {
-    const response = await fetch("http://3.145.29.211/tts", {
+    const response = await fetch("${process.env.NEXT_PUBLIC_API_URL}/tts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: lyrics }),
