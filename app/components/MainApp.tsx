@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function MainApp() {
   const [prompt, setPrompt] = useState("");
@@ -27,6 +28,7 @@ export default function MainApp() {
       const data = await res.json();
       setLyrics(data.lyrics);
     } catch (error) {
+      console.error("Generation error:", error);
       setLyrics("Something went wrong. Please try generating again — it might be a minor glitch.");
     } finally {
       setLoading(false);
@@ -72,10 +74,12 @@ export default function MainApp() {
 
           <div className="flex flex-1">
             <div className="w-1/2 flex items-center justify-center p-4">
-              <img
-                src="/Eminem.jpg" 
+              <Image
+                src="/Eminem.jpg"
                 alt="Rap vibe"
-                className="rounded-xl shadow-lg max-h-[90vh] object-contain"
+                width={600} // Adjust dimensions as needed
+                height={800}
+                className="rounded-xl shadow-lg object-contain max-h-[90vh]"
               />
           </div>
 
