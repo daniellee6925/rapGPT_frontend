@@ -6,7 +6,7 @@ export default function MainApp() {
   const [prompt, setPrompt] = useState("");
   const [temperature, setTemperature] = useState(0.9);
   const [topP, setTopP] = useState(0.9);
-  const [maxLength, setMaxLength] = useState(100);
+  const [maxLength, setMaxLength] = useState(80);
   const [lyrics, setLyrics] = useState("");
   const [loading, setLoading] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
